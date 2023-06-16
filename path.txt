@@ -1,0 +1,19 @@
+http://localhost:82/pages/main.html
+ref="dataEditForm" :model="formData" :rules="rules"
+#ajax格式
+var this = _this;
+axios({
+       method:"post",
+       url:"http://localhost:8080/brand_case_war/updateServlet",
+       data:this.brand
+   }).then(function (resp){
+       if(resp.data == "success"){
+           _this.dialogVisibleUpdate = false;
+           _this.$message({
+               message: '恭喜你，修改成功',
+               type: 'success'
+           });
+           // 重新查询所有数据
+           _this.selectAll();
+       }
+   })

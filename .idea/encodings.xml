@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/Heathe_parent/Healthe_backend/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Heathe_parent/Healthe_backend/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Heathe_parent/Healthe_backend/src/main/resources/health_business3.jrxml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Heathe_parent/Healthe_backend/src/main/resources/jasperreports_extension.properties" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Heathe_parent/Healthe_backend/src/main/resources/stsong" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Heathe_parent/Healthe_interface/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Heathe_parent/Healthe_interface/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Heathe_parent/Healthe_jobs/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Heathe_parent/Healthe_jobs/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Heathe_parent/Healthe_mobile/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Heathe_parent/Healthe_mobile/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Heathe_parent/Healthe_service_provider/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Heathe_parent/Healthe_service_provider/src/main/java/com/itheima/dao/MemberDao.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Heathe_parent/Healthe_service_provider/src/main/java/com/itheima/dao/OrderDao.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Heathe_parent/Healthe_service_provider/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Heathe_parent/Healthe_service_provider/src/main/resources/com/itheima/dao/MemberDao.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Heathe_parent/Healthe_service_provider/src/main/resources/com/itheima/dao/OrderDao.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Heathe_parent/Healthe_service_provider/src/main/resources/com/itheima/dao/OrderSettingDaobak.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Heathe_parent/Heathe_common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Heathe_parent/Heathe_common/src/main/java/com/itheima/constant/RedisMessageConstant.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Heathe_parent/Heathe_common/src/main/java/com/itheima/utils/DateUtils.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Heathe_parent/Heathe_common/src/main/java/com/itheima/utils/MD5Utils.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Heathe_parent/Heathe_common/src/main/java/com/itheima/utils/SMSUtils.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Heathe_parent/Heathe_common/src/main/java/com/itheima/utils/ValidateCodeUtils.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Heathe_parent/Heathe_common/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Heathe_parent/Heathe_common/src/附件：2023年股份公司客户价值分类清单.xlsx" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Heathe_parent/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Heathe_parent/src/main/resources" charset="UTF-8" />
+  </component>
+</project>

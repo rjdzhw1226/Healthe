@@ -1,0 +1,4 @@
+com\itheima\controller\MemberController.class
+com\itheima\controller\OrderController.class
+com\itheima\controller\ValidateCodeController.class
+com\itheima\controller\SetMealControllor.class
