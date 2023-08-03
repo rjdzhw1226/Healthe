@@ -186,7 +186,7 @@ public class ReportController {
         }
     }
 
-    @RequestMapping("/upload")
+    @RequestMapping("/uploadList")
     public Result uploadFileList(@RequestParam Map<String,String> map, @RequestParam("file") MultipartFile[] file){
         try{
             //具体逻辑处理
