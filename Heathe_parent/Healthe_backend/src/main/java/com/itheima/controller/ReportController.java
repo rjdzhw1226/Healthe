@@ -45,6 +45,22 @@ public class ReportController {
     private SetmealService setmealService;
     @Reference
     private ReportService reportService;
+
+    /**
+     * 会员年龄分布
+     * @return
+     */
+    @RequestMapping("/getMemberAgeReport")
+    public Result getMemberAgeReport() {
+        try {
+            Map<String, Object> data = reportService.getMemberAgeReport();
+            return new Result(true, MessageConstant.GET_AGE_LIST_SUCCESS, data);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new Result(false, MessageConstant.GET_AGE_LIST_FAIL);
+        }
+    }
+
     /**
      * 会员数量统计
      * @return

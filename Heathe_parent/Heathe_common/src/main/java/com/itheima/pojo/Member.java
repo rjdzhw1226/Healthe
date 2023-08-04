@@ -18,6 +18,24 @@ public class Member implements Serializable{
     private String email;//邮箱
     private Date birthday;//出生日期
     private String remark;//备注
+    private String healthmanager;//健康管理师
+    private Integer age;
+
+    public String getHealthmanager() {
+        return healthmanager;
+    }
+
+    public void setHealthmanager(String healthmanager) {
+        this.healthmanager = healthmanager;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
 
     public Integer getId() {
         return id;

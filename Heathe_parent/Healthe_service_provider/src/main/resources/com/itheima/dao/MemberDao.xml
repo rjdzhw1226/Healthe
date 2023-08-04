@@ -76,6 +76,111 @@
         where id = #{id}
     </update>
 
+    <update id="update" >
+        update t_member
+        set healthmanager = #{healthName}
+        where id in (select t_order.member_id from t_order where id = #{id})
+    </update>
+
+    <select id="findHealthManager" resultType="string">
+        select a.username from t_user a join t_user_role b on a.id=b.user_id where b.role_id=(select id from t_role where name= '健康管理师' );
+    </select>
+
+    <!--后台添加会员信息-->
+    <insert id="addMember" parameterType="com.itheima.pojo.Member">
+        <selectKey resultType="java.lang.Integer" order="AFTER" keyProperty="id">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into t_member
+        (fileNumber,name,sex,idCard,phoneNumber,birthday,remark,healthmanager)
+        values
+        (#{fileNumber},#{name},#{sex},#{idCard},#{phoneNumber},#{birthday},#{remark},#{healthmanager})
+    </insert>
+    <delete id="deleteMember" parameterType="int">
+        delete from t_member where id=#{id}
+    </delete>
+
+
+    <select id="findAllmessageById" resultType="map">
+        select
+            t_checkgroup.`name` as checkgroups,
+            t_checkitem.`name` as checkitems,
+            t_setmeal.`name` as setmeal,
+            t_address.`detailaddress` as address
+        from
+            t_checkgroup
+                inner join t_checkgroup_checkitem on t_checkgroup_checkitem.checkgroup_id = t_checkgroup.id
+                inner join t_checkitem on t_checkgroup_checkitem.checkitem_id = t_checkitem.id
+                inner join t_setmeal_checkgroup on t_setmeal_checkgroup.checkgroup_id = t_checkgroup.id
+                inner join t_setmeal on t_setmeal_checkgroup.setmeal_id = t_setmeal.id
+                inner join t_order on t_order.setmeal_id = t_setmeal.id
+                inner join t_member on t_order.member_id = t_member.id
+                inner join t_address on t_order.address_id = t_address.id
+        where
+            t_member.id = #{id}
+    </select>
+
+    <select id="findByEmailAndPwd" resultType="com.itheima.pojo.Member">
+        select * from t_member where email=#{email} and password=#{password}
+    </select>
+
+    <update id="updateByOrder" parameterType="map">
+        update t_member set name=#{name} where phoneNumber=#{phoneNumber}
+    </update>
+
+    <update id="editMember" parameterType="com.itheima.pojo.Member">
+        update t_member
+        <set>
+            <if test="fileNumber !=null">
+                fileNumber=#{fileNumber},
+            </if>
+            <if test="name !=null">
+                name=#{name},
+            </if>
+            <if test="sex !=null">
+                sex=#{sex},
+            </if>
+            <if test="idCard !=null">
+                idCard=#{idCard},
+            </if>
+            <if test="phoneNumber !=null">
+                phoneNumber=#{phoneNumber},
+            </if>
+            <if test="regTime !=null">
+                regTime=#{regTime},
+            </if>
+            <if test="password !=null">
+                password=#{password},
+            </if>
+            <if test="email !=null">
+                email=#{email},
+            </if>
+            <if test="birthday !=null">
+                birthday=#{birthday},
+            </if>
+            <if test="remark !=null">
+                remark=#{remark},
+            </if>
+            <if test="healthmanager !=null">
+                healthmanager=#{healthmanager},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <select id="findMemberById" parameterType="int" resultType="com.itheima.pojo.Member">
+        select * from t_member where id=#{id}
+    </select>
+
+    <!--分页查询-->
+    <select id="findPage" parameterType="string" resultType="com.itheima.pojo.Member">
+        select  * from  t_member
+        <if test="value != null and value.length>0">
+            where fileNumber like concat('%',#{value},'%') or name like concat('%',#{value},'%') or phoneNumber like
+            concat('%',#{value},'%')
+        </if>
+    </select>
+
     <!--根据日期统计会员数，统计指定日期之前的会员数-->
     <select id="findMemberCountBeforeDate" parameterType="string" resultType="int">
         select count(id) from t_member where regTime &lt;= #{value}

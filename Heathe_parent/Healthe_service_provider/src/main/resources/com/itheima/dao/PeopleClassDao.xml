@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.itheima.dao.PeopleClassDao">
+
+    <select id="selectByCondition" resultType="com.itheima.pojo.PeopleClass">
+        select member_id as fileName, name as name from t_peopleclass where member_id like #{value} or name like #{value}
+    </select>
+</mapper>

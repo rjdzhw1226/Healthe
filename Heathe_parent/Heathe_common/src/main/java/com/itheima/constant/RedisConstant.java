@@ -11,4 +11,8 @@ public class RedisConstant {
     public static final String SENDTYPE_LOGIN = "002";
     //用于缓存找回密码时发送的验证码
     public static final String SENDTYPE_GETPWD = "003";
+
+    public static final String ADDRESS_PIC_RESOURCES = "addressPicResources";
+    //机构图片保存在数据库中的图片名称
+    public static final String ADDRESS_PIC_DB_RESOURCES = "addressPicDbResources";
 }

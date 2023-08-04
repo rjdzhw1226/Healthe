@@ -3,14 +3,14 @@ package com.itheima.service.impl;
 import com.alibaba.dubbo.config.annotation.Service;
 import com.itheima.dao.MemberDao;
 import com.itheima.dao.OrderDao;
+import com.itheima.dao.ReportDao;
+import com.itheima.pojo.Member;
 import com.itheima.service.ReportService;
 import com.itheima.utils.DateUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * 统计报表服务
@@ -18,6 +18,9 @@ import java.util.Map;
 @Service(interfaceClass = ReportService.class)
 @Transactional
 public class ReportServiceImpl implements ReportService {
+
+    @Autowired
+    private ReportDao reportDao;
     @Autowired
     private MemberDao memberDao;
     @Autowired
@@ -96,6 +99,89 @@ public class ReportServiceImpl implements ReportService {
         result.put("hotSetmeal",hotSetmeal);
 
         return result;
+    }
+
+    public Map<String, Object> getMemberAgeReport() {
+        List<Member> lists = memberDao.findAll();
+        List<Integer> ages = new ArrayList<>();
+        Map<String, Object> result = new HashMap<>();
+        int a = 0, b = 0, c = 0, d = 0, e = 0, f = 0;
+        for (Member member : lists) {
+            Date birthday = member.getBirthday();
+            int age = getAgeByBirth(birthday);
+            if (age > 0 && age <= 6) {
+                a++;
+            }
+            if (age > 7 && age <= 12) {
+                b++;
+            }
+            if (age > 12 && age <= 17) {
+                c++;
+            }
+            if (age > 17 && age <= 45) {
+                d++;
+            }
+            if (age > 44 && age <= 69) {
+                e++;
+            }
+            if (age > 69) {
+                f++;
+            }
+        }
+        ages.add(a);
+        ages.add(b);
+        ages.add(c);
+        ages.add(d);
+        ages.add(e);
+        ages.add(f);
+        List<String> name = new ArrayList<>();
+        name.add("婴幼儿");
+        name.add("少儿");
+        name.add("青少年");
+        name.add("青年");
+        name.add("中年");
+        name.add("老年");
+        result.put("memberAgeName", name);
+        result.put("memberAgeCount", ages);
+        return result;
+    }
+
+
+    private static int getAgeByBirth(Date birthday) {
+        if (birthday == null) {
+            int age = -1;
+            return age;
+        }
+        int age = 0;
+        Calendar cal = Calendar.getInstance();
+        if (cal.before(birthday)) { //出生日期晚于当前时间，无法计算
+            throw new IllegalArgumentException(
+                    "The birthDay is before Now.It's unbelievable!");
+        }
+        int yearNow = cal.get(Calendar.YEAR);  //当前年份
+        int monthNow = cal.get(Calendar.MONTH);  //当前月份
+        int dayOfMonthNow = cal.get(Calendar.DAY_OF_MONTH); //当前日期
+        cal.setTime(birthday);
+        int yearBirth = cal.get(Calendar.YEAR);
+        int monthBirth = cal.get(Calendar.MONTH);
+        int dayOfMonthBirth = cal.get(Calendar.DAY_OF_MONTH);
+        age = yearNow - yearBirth;   //计算整岁数
+        if (monthNow <= monthBirth) {
+            if (monthNow == monthBirth) {
+                if (dayOfMonthNow < dayOfMonthBirth) age--;//当前日期在生日之前，年龄减一
+            } else {
+                age--;//当前月份在生日之前，年龄减一
+            }
+        }
+        return age;
+    }
+
+    /**
+     * 查询已预约的套餐的名称和对应的已预约的套餐的金额
+     * @return
+     */
+    public List<Map> findSetmealMoney() {
+        return reportDao.findSetmealMoney();
     }
 }
 

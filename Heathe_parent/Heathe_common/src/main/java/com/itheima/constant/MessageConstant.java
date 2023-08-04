@@ -43,6 +43,7 @@ public class MessageConstant {
     public static final String EDIT_MEMBER_SUCCESS = "编辑会员成功";
     public static final String TELEPHONE_VALIDATECODE_NOTNULL = "手机号和验证码都不能为空";
     public static final String LOGIN_SUCCESS = "登录成功";
+    public static final String LOGIN_FAIL = "登录失败";
     public static final String VALIDATECODE_ERROR = "验证码输入错误";
     public static final String QUERY_ORDER_SUCCESS = "查询预约信息成功";
     public static final String QUERY_ORDER_FAIL = "查询预约信息失败";
@@ -68,4 +69,30 @@ public class MessageConstant {
     public static final String GET_BUSINESS_REPORT_FAIL = "获取运营统计数据失败";
     public static final String GET_SETMEAL_LIST_SUCCESS = "查询套餐列表数据成功";
     public static final String GET_SETMEAL_LIST_FAIL = "查询套餐列表数据失败";
+    public static final String GET_USER_SUCCESS = "查询用户成功";
+    public static final String GET_USER_FAIL = "查询用户名失败";
+    public static final String GET_MEMBER_SUCCESS = "查询会员成功";
+    public static final String GET_MEMBER_FAIL = "查询会员失败";
+    public static final String QUERY_ADDRESS_LIST_SUCCESS= "查询体检机构列表数据成功";
+    public static final String QUERY_ADDRESS_LIST_FAIL= "查询体检机构列表数据失败";
+    public static final String ADD_ADDRESS_SUCCESS= "新增体检机构成功";
+    public static final String ADD_ADDRESS_FAIL= "新增体检机构失败";
+    public static final String EDIT_ADDRESS_SUCCESS= "编辑体检机构成功";
+    public static final String EDIT_ADDRESS_FAIL= "编辑体检机构失败";
+    public static final String DELETE_ADDRESS_SUCCESS= "删除体检机构成功";
+    public static final String DELETE_ADDRESS_FAIL= "删除体检机构失败";
+    public static final String DELETE_ADDRESS_AND_FAIL= "该地址有订单使用,请联系订单管理员修改";
+    public static final String GET_ADDRESS_SUCCESS= "查询体检机构数据成功";
+    public static final String GET_ADDRESS_FAIL= "查询体检机构数据失败";
+    public static final String ADD_PERMISSION_SUCCESS = "添加权限数据成功";
+    public static final String ADD_PERMISSION_FAIL = "添加权限数据失败";
+    public static final String GET_AGE_LIST_SUCCESS = "查询年龄统计数据失败";
+    public static final String GET_AGE_LIST_FAIL = "查询年龄统计数据失败";
+    public static final String EDIT_PERMISSION_SUCCESS = "编辑权限数据成功";
+    public static final String EDIT_PERMISSION_FAIL = "编辑权限数据失败";
+
+    public static final String GET_ROLE_SUCCESS = "查询角色数据成功";
+    public static final String GET_ROLE_FAIL = "查询角色数据失败";
+    public static final String GET_MEMBERMONEY_COUNT_REPORT_SUCCESS = "获取每日会员消费统计数据成功";
+    public static final String GET_MEMBERMONEY_COUNT_REPORT_FAIL = "获取每日会员消费统计数据成功";
 }

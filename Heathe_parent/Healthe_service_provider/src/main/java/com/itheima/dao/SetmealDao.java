@@ -3,6 +3,7 @@ package com.itheima.dao;
 import com.github.pagehelper.Page;
 import com.itheima.pojo.Order;
 import com.itheima.pojo.Setmeal;
+import org.apache.ibatis.annotations.MapKey;
 
 import java.util.List;
 import java.util.Map;
@@ -32,6 +33,9 @@ public interface SetmealDao {
 
     public Page<Order> findByConditionList1(Integer queryString);
 
+    @MapKey("id")
     public List<Map<String, Object>> findSetmealCount();
+    //查询套餐名称
+    List<String> findSetmealNameById(Integer setmealId);
 
 }

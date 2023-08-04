@@ -17,7 +17,13 @@ public class Order implements Serializable{
     private String orderType;//预约类型 电话预约/微信预约
     private String orderStatus;//预约状态（是否到诊）
     private Integer setmealId;//体检套餐id
-
+    private String food;//建议食物
+    private String sport;//建议运动
+    private String healthName;//健康管理师姓名
+    private String suggestion;//健康管理师建议
+    private Integer address_id;
+    private Member member;
+    private Setmeal setmeal;
     public Order() {
     }
 
@@ -46,6 +52,62 @@ public class Order implements Serializable{
         this.orderType = orderType;
         this.orderStatus = orderStatus;
         this.setmealId = setmealId;
+    }
+
+    public String getFood() {
+        return food;
+    }
+
+    public void setFood(String food) {
+        this.food = food;
+    }
+
+    public String getSport() {
+        return sport;
+    }
+
+    public void setSport(String sport) {
+        this.sport = sport;
+    }
+
+    public String getHealthName() {
+        return healthName;
+    }
+
+    public void setHealthName(String healthName) {
+        this.healthName = healthName;
+    }
+
+    public String getSuggestion() {
+        return suggestion;
+    }
+
+    public void setSuggestion(String suggestion) {
+        this.suggestion = suggestion;
+    }
+
+    public Integer getAddress_id() {
+        return address_id;
+    }
+
+    public void setAddress_id(Integer address_id) {
+        this.address_id = address_id;
+    }
+
+    public Member getMember() {
+        return member;
+    }
+
+    public void setMember(Member member) {
+        this.member = member;
+    }
+
+    public Setmeal getSetmeal() {
+        return setmeal;
+    }
+
+    public void setSetmeal(Setmeal setmeal) {
+        this.setmeal = setmeal;
     }
 
     public Integer getId() {

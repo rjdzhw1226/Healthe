@@ -19,4 +19,8 @@ public interface ReportService {
      *      hotSetmeals -> List<Setmeal>
      */
     public Map<String,Object> getBusinessReport() throws Exception;
+
+
+    public Map<String, Object> getMemberAgeReport();
+
 }
